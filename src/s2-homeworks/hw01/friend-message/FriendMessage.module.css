@@ -1,31 +1,47 @@
 .friendMessage {
-
+    margin: 0 0 52px 0;
 }
 
 .friendImageAndText {
-
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: end;
 }
 
 .friendImageAndText img {
-
+    width: 48px;
+    height: 48px;
 }
 
 .friendText {
-
+    position: relative;
+    background: #F5F7FB;
+    color: black;
+    padding: 8px 13px;
+    border-radius: 8px;
 }
 
 .friendText:after {
-
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    transform: rotate(135deg);
+    border-left: 15px solid transparent; /* Левый угол */
+    border-right: 15px solid transparent; /* Правый угол */
+    border-bottom: 15px solid #F5F7FB; /* Цвет треугольника */
+    bottom: -2px;
+    left: -11px;
 }
 
 .friendName {
-
-}
-
-.friendMessageText {
-
+    font-weight: 600;
+    margin: 0 0 3px 0;
 }
 
 .friendTime {
-
+    margin: 5px 0 0 8px;
+    font-size: 10px;
+    font-weight: 600;
 }

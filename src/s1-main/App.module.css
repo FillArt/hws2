@@ -3,9 +3,17 @@
 }
 
 .hw {
-
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+    padding: 24px 0 32px 0;
+    max-width: 1140px;
+    margin: 30px auto;
 }
 
 .hwTitle {
-
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 27px;
+    max-width: 1140px;
+    margin: 0 auto 10px;
 }

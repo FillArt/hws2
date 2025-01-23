@@ -11,12 +11,14 @@
 }
 
 .nav a {
+    outline: 1px solid green;
 }
 
 .nav a:hover {
 }
 
 .nav a.active {
+    outline: 1px solid red;
 }
 .close {
 }

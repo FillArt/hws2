@@ -41,7 +41,7 @@ function Clock() {
     }
 
     const seconds = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()
-    const stringTime = `${date.getHours()} : ${date.getMinutes()} : ${seconds}` || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringTime = `${date.getHours()} : ${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()} : ${seconds}` || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = `${date.getDay() < 10 ? '0' + date.getDay() : date.getDay()}.
                                      ${date.getMonth() < 10 ? '0' + date.getMonth() : date.getMonth()}.
                                      ${date.getFullYear()}` ||

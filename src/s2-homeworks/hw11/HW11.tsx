@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import s from './HW11.module.css'
 import s2 from '../../s1-main/App.module.css'
-import { restoreState } from '../hw06/localStorage/localStorage'
+import {restoreState, saveState} from '../hw06/localStorage/localStorage'
 import SuperRange from './common/c7-SuperRange/SuperRange'
 
 /*
 *** 1 - передать значения в оба слайдера
 *** 2 - дописать типы и логику функции change
-* 3 - сделать стили в соответствии с дизайном
+*** 3 - сделать стили в соответствии с дизайном
 * */
 
 
@@ -22,9 +22,14 @@ function HW11() {
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
         if(typeof value === 'object') {
             setValue1(value[0])
+            saveState<number>('hw11-value1', value[0])
+
             setValue2(value[1])
+            saveState<number>('hw11-value2', value[1])
+
         } else {
             setValue1(value)
+            saveState<number>('hw11-value1', value)
         }
     }
 

@@ -6,17 +6,26 @@ import SuperRange from './common/c7-SuperRange/SuperRange'
 
 /*
 *** 1 - передать значения в оба слайдера
-* 2 - дописать типы и логику функции change
+*** 2 - дописать типы и логику функции change
 * 3 - сделать стили в соответствии с дизайном
 * */
+
+
+type ValueType = number | number[]
 
 function HW11() {
     // for autotests // не менять // можно подсунуть в локалСторэдж нужные числа, чтоб увидеть как они отображаются
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
-    const change = (event: Event, value: any) => {
+    const change = (event: Event, value: ValueType) => {
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
+        if(typeof value === 'object') {
+            setValue1(value[0])
+            setValue2(value[1])
+        } else {
+            setValue1(value)
+        }
     }
 
     return (

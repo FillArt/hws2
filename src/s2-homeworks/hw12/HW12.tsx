@@ -22,12 +22,10 @@ const themes = [
 const HW12 = () => {
     // взять ид темы из редакса
     const theme = useSelector((state: AppStoreType) => state.theme.themeId)
-    console.log(theme)
+    const dispatch = useDispatch()
     const themeId = 1
 
-    const change = (id: any) => { // дописать функцию
-
-    }
+    const change = (id: number) => dispatch(changeThemeId(id))
 
     useEffect(() => {
         document.documentElement.dataset.theme = themeId + ''

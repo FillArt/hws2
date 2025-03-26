@@ -9,8 +9,8 @@ import {AppStoreType} from "../hw10/bll/store";
 /*
 *** 1 - в файле themeReducer.ts написать нужные типы вместо any, дописать редьюсер
 *** 2 - получить themeId из редакса
-* 3 - дописать тип и логику функции change
-* 4 - передать пропсы в SuperSelect
+*** 3 - дописать тип и логику функции change
+*** 4 - передать пропсы в SuperSelect
 * */
 
 const themes = [
@@ -23,9 +23,12 @@ const HW12 = () => {
     // взять ид темы из редакса
     const theme = useSelector((state: AppStoreType) => state.theme.themeId)
     const dispatch = useDispatch()
-    const themeId = 1
+    const themeId = theme ? theme : 1
 
-    const change = (id: number) => dispatch(changeThemeId(id))
+    const change = (id: number) => {
+        dispatch(changeThemeId(id))
+        console.log(theme)
+    }
 
     useEffect(() => {
         document.documentElement.dataset.theme = themeId + ''
@@ -41,6 +44,8 @@ const HW12 = () => {
                 <SuperSelect
                     id={'hw12-select-theme'}
                     className={s.select}
+                    options={themes}
+                    onChangeOption={change}
                     // сделать переключение тем
 
                 />

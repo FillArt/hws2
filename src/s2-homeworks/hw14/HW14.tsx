@@ -7,7 +7,7 @@ import {useSearchParams} from 'react-router-dom'
 
 /*
 *** 1 - дописать функцию onChangeTextCallback в SuperDebouncedInput
-* 2 - дописать функцию sendQuery в HW14
+*** 2 - дописать функцию sendQuery в HW14
 * 3 - дописать функцию onChangeText в HW14
 * 4 - сделать стили в соответствии с дизайном
 * 5 - добавить HW14 в HW5/pages/JuniorPlus
@@ -38,7 +38,11 @@ const HW14 = () => {
                 console.log(res?.data.techs)
 
                 // сохранить пришедшие данные
-
+                    if(res?.data.techs) {
+                        setTechs(res?.data.techs)
+                    } else {
+                        setTechs([])
+                    }
                 //
             })
     }
